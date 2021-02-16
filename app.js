@@ -1,7 +1,16 @@
-var add = function (n1, n2, showResults) {
-    return showResults ? console.log(n1 + n2) : n1 + n2;
-};
-var num1 = "3";
-var num2 = 9;
-var printResult = true;
-console.log(add(+num1, +num2, printResult));
+// Look @ resultConversion param
+// It's literal typing instead of typing like number
+// It can only be two types of string, no value else!
+function combine(input1, input2, resultConversion) {
+    var result;
+    if ((typeof input1 === "number" && typeof input2 === "number") ||
+        resultConversion === "as-number") {
+        result = +input1 + +input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+}
+var combinedAges = combine(30, 26);
+console.log(combinedAges);
